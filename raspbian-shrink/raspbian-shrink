@@ -136,8 +136,8 @@ if [ "$START" == "" ] || [ ! "$CHECK3" == "" ]; then
 fi
 
 if [ "$1" != "$OUTFILE" ]; then
-  echo "  ***** Copying image *****"
-  dcfldd if="$1" of="$OUTFILE"
+  echo "  ***** Rename image *****"
+  mv "$1" "$OUTFILE"
 else
   echo "  ***** Resizing without making a copy - good luck! *****"
 fi
@@ -225,4 +225,4 @@ fi
 
 echo "  ***** Finished *****"
 echo "If no errors reported, resized image is now: $OUTFILE"
-ls -shp1 "$1" "$OUTFILE"
+ls -shp1 "$OUTFILE"
